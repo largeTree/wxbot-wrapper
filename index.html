@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="https://web.5uzhe.com/favicon.ico">
+
+    <meta data-react-helmet="true" name="keywords" content="优惠券,返利,购物,省钱,赚钱">
+    <meta name="description" content="购物没有优惠券怎么能行？找我啊，有优惠，有返利，能省钱，还能挣钱!">
+
+    <title>购有惠</title>
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+        }
+
+        #frame {
+            width: 30em;
+            height: 99.5vh;
+            border: 0px;
+        }
+
+        #qr-code {
+            display: none;
+            position: fixed;
+            top: 2vh;
+            border: 1px #CCCCCC dotted;
+        }
+        
+        #qr-code img {
+            width: 10em;
+            height: 10em;
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /*滚动槽*/
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* 滚动条滑块 */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+<script>
+    function showQrCode() {
+        document.getElementById('qr-code').style.display = 'block';
+        moveQrCode();
+    }
+
+    function moveQrCode() {
+        var left = document.getElementById('frame').offsetLeft + document.getElementById('frame').clientWidth + (window.innerWidth * 0.01);
+        document.getElementById('qr-code').style.left = left + 'px';
+    }
+    window.addEventListener('resize', moveQrCode);
+</script>
+</head>
+
+<body>
+    <iframe id="frame" onload="showQrCode()" src="https://web.5uzhe.com?iframe_flag=1"></iframe>
+    <div id="qr-code">
+        <div>欢迎关注公众号</div>
+        <img src="http://img.wb.qiuxs.com/qrCode_8cm.jpg" />
+    </div>
+</body>
+</html>
