@@ -71,10 +71,16 @@
 </head>
 
 <body>
-    <iframe id="frame" onload="showQrCode()" src="https://web.5uzhe.com?iframe_flag=1"></iframe>
+    <iframe id="frame" onload="showQrCode()" src=""></iframe>
     <div id="qr-code">
         <div>欢迎关注公众号</div>
         <img src="http://img.wb.qiuxs.com/qrCode_8cm.jpg" />
     </div>
 </body>
+<script>
+    let hash = window.location.hash;
+    let search = window.location.search;
+    let src = 'https://web.5uzhe.com/#/' + hash + search + '&iframe_flag=1';
+    document.getElementById('frame').src = src;
+</script>
 </html>
