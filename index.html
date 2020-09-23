@@ -80,7 +80,10 @@
 <script>
     let hash = window.location.hash;
     let search = window.location.search;
-    let src = 'https://web.5uzhe.com/#/' + hash + search + '&iframe_flag=1';
+    if (!search || search.indexOf('?') == -1) {
+        search = '?';
+    }
+    let src = 'https://web.5uzhe.com/' + hash + search + '&iframe_flag=1';
     document.getElementById('frame').src = src;
 </script>
 </html>
